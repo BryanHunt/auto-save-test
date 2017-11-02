@@ -1,0 +1,40 @@
+<h3>Task Edit</h3>
+
+<div>
+  <button {{action "toggleAutosave"}}>Toggle Autosave</button>
+</div>
+<br/>
+<div>
+  Autosave: {{autosaveEnabled}}
+</div>
+<div>
+  hasDirtyAttributes: {{model.hasDirtyAttributes}}
+</div>
+<div>
+  isDirty: {{model.isDirty}}
+</div>
+
+<br/>
+
+<div>
+  Title: {{input value=model.title}}
+</div>
+
+<h4>Comments</h4>
+<button {{action "addComment"}}>Add Comment</button>
+
+<div>
+  <ul>
+    {{#each model.comments as |comment|}}
+      <li>Comment: {{input value=comment.text}}</li>
+    {{else}}
+      No comments
+    {{/each}}
+  </ul>
+</div>
+
+<br/>
+
+<div>
+  <button {{action "save"}}>Save</button>
+</div>

@@ -1,0 +1,18 @@
+Tasks
+
+<ul>
+  {{#each model as |task|}}
+    <li>{{#link-to 'task' task.id}}{{task.title}}{{/link-to}}</li>
+  {{else}}
+    No tasks
+  {{/each}}
+</ul>
+
+{{outlet}}
+
+
+<h3>Database Dump</h3>
+<button {{action "refreshDb"}}>Refresh DB</button>
+<pre>
+  {{db}}
+</pre>
